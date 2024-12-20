@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        class="com.linmarina.lab12.DrawView"
+        android:id="@+id/drawView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/downrightButton"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/upleftButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Move Down Left"
+        android:onClick="movedownLeft"
+        android:id="@+id/downleftButton"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/drawView"
+        app:layout_constraintLeft_toRightOf="@id/downleftButton"
+        android:onClick="redCheckBoxClicked"
+        android:id="@+id/redCheckBox"
+        android:text="Red"
+        android:gravity="center"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/redCheckBox"
+        app:layout_constraintLeft_toRightOf="@+id/upleftButton"
+        android:onClick="greenCheckBoxClicked"
+        android:text="Green"
+        android:id="@+id/greenCheckBox"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/uprightButton"
+        android:text="Move Down Right"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="movedownRight"
+        android:id="@+id/downrightButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="   Move Up Left  "
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="moveupLeft"
+        android:id="@+id/upleftButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  Move Up Right   "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="moveupRight"
+        android:id="@+id/uprightButton"/>
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:text="Time: 00:00" />
+</androidx.constraintlayout.widget.ConstraintLayout>
